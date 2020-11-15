@@ -1,0 +1,268 @@
+{% extends 'main.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+
+        <!-- EVENTS -->
+        <section class="row" id="events">
+
+            <!-- Left Side Bar -->
+            <div class="col-12 col-md-5 col-lg-4 col-xl-3 greyRightBorder">
+                <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                <img src="{% static 'dummy/original.webp' %}" class="imgThumbnail275">
+                </a>
+                <h4 class="bodyFont pt-3">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">Trump Is Scared</a>
+                </h4>
+                <h6 class="lightFont pt-1 h-sm">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+                <hr class="colorGreyBg mr-2" >
+            </div>
+
+            <!--Mid Section-->
+            <div class="col-12 col-md-7 col-lg-4 col-xl-6 greyRightBorder">
+               <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                    <img class="img-fluid" src="{% static 'dummy/original2.webp' %}">
+                </a>
+
+                <h2 class="bodyFont pt-3 text-center">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">
+                    <b>The Final Season of the Trump Show</b>
+                 </a>
+                </h2>
+
+                <h6 class="lightFont pt-1 h-sm text-center">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+            </div>
+
+            <!-- Right Side Bar -->
+            <div class="col-12 col-md-12 col-lg-4 col-xl-3">
+                <div class="row no-gutters">
+                    <div class="col-9">
+                        <h4 class="bodyFont">
+                         <!-- title -->
+                         <a class="colorBlack blackOnHover h-md" href="#">
+                            Biden Wants to Transform America (Really)
+                          </a>
+                        </h4> 
+
+                        <h6 class="lightFont pt-1 h-sm">
+                            <!-- author -->
+                            <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                        </h6> 
+                    </div>
+                    <div class="col-3 text-right">
+                        <img src="{% static 'dummy/original3.webp' %}" class="imgThumbnail80">
+                    </div>
+                </div>
+                <hr class="colorGreyBg" >
+            </div>
+
+
+        </section>
+
+        <!-- END OF EVENTS SECTION -->
+        <hr class="colorGreyBg" >
+
+        <!-- LATEST-->
+        <section class="row" id="latest">
+            <!-- four most recent posts -->
+             <div class="col-12 col-md-5 col-lg-4 col-xl-3 greyRightBorder">
+                <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                <img src="{% static 'dummy/original4.webp' %}" class="imgThumbnail275">
+                </a>
+                <h4 class="bodyFont pt-3">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">Trump Is Scared</a>
+                </h4>
+                <h6 class="lightFont pt-1 h-sm">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+            </div>
+
+             <div class="col-12 col-md-5 col-lg-4 col-xl-3 greyRightBorder">
+                <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                <img src="{% static 'dummy/original3.webp' %}" class="imgThumbnail275">
+                </a>
+                <h4 class="bodyFont pt-3">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">Trump Is Scared</a>
+                </h4>
+                <h6 class="lightFont pt-1 h-sm">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+            </div>
+
+             <div class="col-12 col-md-5 col-lg-4 col-xl-3 greyRightBorder">
+                <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                <img src="{% static 'dummy/original2.webp' %}" class="imgThumbnail275">
+                </a>
+                <h4 class="bodyFont pt-3">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">Trump Is Scared</a>
+                </h4>
+                <h6 class="lightFont pt-1 h-sm">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+            </div>
+
+             <div class="col-12 col-md-5 col-lg-4 col-xl-3 greyRightBorder">
+                <a class="colorBlack blackOnHover" href="#">
+                <!-- featured image -->
+                <img src="{% static 'dummy/original.webp' %}" class="imgThumbnail275">
+                </a>
+                <h4 class="bodyFont pt-3">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover" href="#">Trump Is Scared</a>
+                </h4>
+                <h6 class="lightFont pt-1 h-sm">
+                    <!-- author -->
+                    <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                </h6>
+            </div>
+        </section>
+        <!-- END OF LATEST SECTION-->
+        
+        <!-- repeat same with 2 more sections 
+            | Playing, Learning & How To
+            | Health, Locals, Classifieds 
+        -->
+        <!--STAYING, DINING, POPULAR POSTS -->
+        <section class="row my-5" id="stayDinePopular">
+            <!-- STAYING COLUMN -->
+            <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+               <h1 class="clearfix my-0">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover float-left serifFont ls-2" href="#">STAYING</a>
+
+                 <!-- view all -->
+                 <a class="colorDarkerGrey blackOnHover float-right pt-4 lightFont h-sm" href="#">
+                    <b>SEE ALL</b></a>
+                </h1>
+                <span class="blackVerticalLine"></span>
+
+               
+                 <table class="table table-responsive table-borderless">
+                     <!-- STAYING PLACES @Row-->
+                    <tr class="greyBottomBorder">
+                        <td>
+                            <img src="{% static 'dummy/original3.webp' %}" class="imgThumbnail150">
+                        </td>
+                        <td>
+                        <h4 class="inlineBlocks bodyFont pl-2">
+                         <!-- title -->
+                         <a class="colorBlack blackOnHover h-md" href="#">
+                            Biden Wants to Transform America (Really)
+                          </a>
+                        </h4> 
+                    </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- DINING COLUMN -->
+            <div class="col-12 col-md-7 col-lg-4 col-xl-6">
+               <h1 class="clearfix my-0">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover float-left serifFont ls-2" href="#">DINING</a>
+
+                 <!-- view all -->
+                 <a class="colorDarkerGrey blackOnHover float-right pt-4 lightFont h-sm" href="#">
+                    <b>SEE ALL</b></a>
+                </h1>
+                <span class="blackVerticalLine"></span>
+
+               
+                 <table class="table table-responsive table-borderless">
+                     <!-- DINING PLACES @Row-->
+                    <tr class="greyBottomBorder">
+                        <td>
+                            <img src="{% static 'dummy/original4.webp' %}" class="imgThumbnail150">
+                        </td>
+                        <td>
+                        <h2 class="inlineBlocks bodyFont">
+                         <!-- title -->
+                         <a class="colorBlack blackOnHover" href="#">
+                            Biden Wants to Transform America (Really)
+                          </a>
+                        </h2> 
+
+                         <h6 class="inlineBlocks lightFont pt-1 h-sm">
+                            <!-- author -->
+                            <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+
+
+                            <!-- date update -->
+                            <span class="colorDarkerGrey pl-3"><b>8:00 AM ET</b></span>
+                        </h6> 
+
+                    </td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <!-- POPULAR COLUMN -->
+             <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+               <h1 class="clearfix my-0">
+                 <!-- title -->
+                 <a class="colorBlack blackOnHover float-left serifFont ls-2" href="#">POPULAR</a>
+
+                 <!-- view all -->
+                 <a class="colorDarkerGrey blackOnHover float-right pt-4 lightFont h-sm" href="#">
+                    <b>SEE ALL</b></a>
+                </h1>
+                <span class="blackVerticalLine"></span>
+
+               
+                 <table>
+                     <!-- POPULAR PLACES @2-Rows-->
+                    <tr>
+                        <td class="pt-2">
+                            <!-- number -->
+                            <span class="serifFont h-md pr-2 colorPrimaryDark">1</span>
+                            <span class="bodyFont">
+                             <!-- title -->
+                             <a class="colorBlack blackOnHover h-md" href="#">
+                                Biden Wants to Transform America (Really)
+                              </a>
+                            </span> 
+                        </td>
+                    </tr>
+                    <tr class="greyBottomBorder">
+                        <td class="py-2">
+                        <!-- author -->
+                        <span class="lightFont h-sm">
+                            <!-- author -->
+                            <a class="colorBlack blackOnHover" href="#"><b>PETER NICHOLAS</b></a>
+                        </span>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </section>
+
+        <!-- END OF STAYING, DINING AND POPULAR POSTS -->
+        
+    </div>
+{% endblock content %}

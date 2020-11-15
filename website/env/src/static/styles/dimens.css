@@ -1,0 +1,28 @@
+
+/******* HEADINGS *********/
+.h-lg{
+	font-size: 24px;
+}
+
+.h-md{
+	font-size: 20px;
+}
+
+.h-std{
+	font-size: 16px;
+}
+
+.h-sm{
+	font-size: 12px;
+}
+
+
+.ls-2{
+  letter-spacing: 2px;
+}
+
+
+/************** body ***********/
+.b-std{
+	font-size: 18px;
+}

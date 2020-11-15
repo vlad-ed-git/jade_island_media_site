@@ -1,0 +1,93 @@
+.colorPrimary{
+	color: #5F9B5D ;
+}
+
+.colorPrimaryDark{
+	color: #377C42 ;
+}
+
+.colorPrimaryBg{
+	background-color: #5F9B5D ;
+}
+
+.colorPrimaryDarkBg{
+	background-color: #377C42 ;
+}
+
+.colorBlack{
+	color: #000000;
+}
+
+.colorBlackBg{
+	background-color: #000000;
+}
+
+.colorGrey{
+	color: #f7f7f7;
+}
+
+.colorGreyBg{
+	background-color: #f7f7f7;
+}
+
+.colorDarkerGrey{
+	color: #999999;
+}
+
+.colorLightSilver{
+	color : #f9fafc;
+}
+
+.colorLightSilverBg{
+	background-color: #f9fafc;
+}
+
+.colorDarkSilver{
+	color: #d3dce6;
+}
+
+.colorDarkSilverBg{
+	background-color: #d3dce6;
+}
+
+.colorWhite{
+	color: #ffffff;
+}
+
+.colorWhiteBg{
+	background-color: #ffffff;
+}
+
+.colorErrors{
+	color: #b00200;
+}
+
+.blackOnHover:visited,
+.blackOnHover:hover,
+.blackOnHover:focus{
+	color: #000000;
+	cursor: pointer;
+	cursor: hand;
+}
+
+
+.lightGreyOnHover:visited,
+.lightGreyOnHover:hover,
+.lightGreyOnHover:focus{
+	color: #f7f7f7;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.primaryDarkOnActive:active{
+  color: #377C42;
+}
+
+
+.greyRightBorder{
+	border-right: 1px solid #E0E0E0;
+}
+
+.greyBottomBorder{
+	border-bottom: 1px solid #E0E0E0;
+}

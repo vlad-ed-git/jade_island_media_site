@@ -1,0 +1,48 @@
+@font-face {
+  font-family: lightFont;
+  src: url('../fonts/light_font.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: bodyFont;
+  src: url('../fonts/regular_font.woff2') format('woff2');
+}
+
+
+
+@font-face {
+  font-family: boldFont;
+  src: url('../fonts/bold_font.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: serifFont;
+  src: url('../fonts/serif_font.woff2') format('woff2');
+}
+
+
+
+
+
+.lightFont{
+  font-family: lightFont;
+}
+
+
+.bodyFont{
+  font-family: bodyFont;
+}
+
+
+.boldFont{
+  font-family: boldFont;
+}
+
+
+.serifFont{
+  font-family: serifFont;
+}
+
+

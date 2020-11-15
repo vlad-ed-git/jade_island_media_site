@@ -1,0 +1,87 @@
+{% extends 'main_secondary.html' %}
+      {% load i18n %}
+      {% load static %}
+
+          <!-- page specific meta info -->
+    {% block meta %}
+    <title>Jade Island Media | Profile </title>
+    {% endblock meta %}
+      {% block content %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-7">
+           
+           {% if request.user.is_editor %}
+           {% include 'jade_island_media/editors/posts/dashboard.html' %}
+           
+           {% else %}
+           {% include 'jade_island_media/non_editors/posts/dashboard.html' %}
+          
+           {% endif %}
+             
+          </div>
+
+
+
+          <!-- USER PROFILE -->
+          <div class="col-12 col-lg-5">
+          <div class="card shadow colorWhiteBg my-3" style="border-radius: 0px !important;">
+            <div class="card-body">
+              <h3 class="boldFont colorBlack">{% trans "My Profile" %}</h3>
+                {% if success_message %}
+                <p class="bodyFont">
+                <span class="colorPrimary">{% trans 'Your profile has been updated!' %}</span>
+                </p>
+                {% endif %}
+            </div>
+
+            <!-- ERRORS SECTION -->
+            {% include 'jade_island_media/account/auth_errors.html' with form=profile_form %}
+
+            <!-- login form -->
+            <form class="mx-5" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+
+                <!-- profile picture -->
+                <img
+                {% if profile_form.initial.profile_picture %}
+                src="{{ profile_form.initial.profile_picture.url }}" 
+                {% else %}
+                src="{% static 'images/defaults/profile_avatar_non_binary.png' %}"
+                {% endif %}
+                class="rounded-circle" height="70px" width="70px">
+              </div>
+              
+                <div class="form-group my-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="id_profile_picture" name="profile_picture">
+                  <label class="custom-file-label lightFont h-std" for="id_profile_picture">{% trans "Choose profile photo" %}</label>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="id_name" class="bodyFont">{% trans "Your Name" %}</label>
+                <input type="text" class="form-control form-control-lg lightFont h-std" id="id_name" name="display_name" aria-describedby="emailHelp" value="{{ profile_form.initial.display_name }}" required="true">
+              </div>
+              
+              <div class="form-group">
+                <label for="id_email" class="bodyFont">{% trans "Email address" %}</label>
+                <input type="email" class="form-control form-control-lg lightFont h-std" id="id_email" name="email" aria-describedby="emailHelp" value="{{ profile_form.initial.email }}" required="true">
+              </div>
+
+              <div class="blocks mb-3">
+              <button type="submit" class="lightFont btnOutlinePrimaryDarkBg">{% trans "Update Profile" %}</button>
+              </div>
+            </form>
+
+            <div class="clearfix blocks m-4">
+                <a class="colorErrors blackOnHover float-right boldFont h-std" href="{% url 'password_change' %}">{% trans "Change Password" %}</a>
+            </div>
+            
+          </div>
+    </div>
+      </div>
+    </div>
+    {% endblock %}

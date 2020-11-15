@@ -1,0 +1,43 @@
+<!--NON FIELD ERRORS IF ANY-->
+{% load i18n %}
+<div class="mx-5">
+{% if form.non_field_errors %}
+<div class="my-2">
+    <h6 class="colorErrors h-std bodyFont">{{ form.non_field_errors }} </h6>
+</div>
+{% endif %}
+{% if form.email.errors %}
+<div class="my-2">
+    {% trans "Please check the email" %}
+    <h6 class="colorErrors h-std bodyFont">{{ form.email.errors }} </h6>
+</div>
+{% endif %}
+
+{% if form.password.errors %}
+<div class="my-2">
+    {% trans "Please check your password" %}
+    <h6 class="colorErrors h-std bodyFont">{{ form.password.errors }} </h6>
+</div>
+{% endif %}
+
+{% if form.password1.errors %}
+<div class="my-2">
+    {% trans "Please check your password" %}
+    <h6 class="colorErrors h-std bodyFont">{{ form.password1.errors }} </h6>
+</div>
+{% endif %}
+
+{% if form.password2.errors %}
+<div class="my-2">
+    {% trans "Confirm password error" %}
+    <h6 class="colorErrors h-std bodyFont">{{ form.password2.errors }} </h6>
+</div>
+{% endif %}
+
+{% if form.display_name.errors %}
+<div class="my-2">
+    {% trans "Please check your name" %}
+    <h6 class="colorErrors h-std bodyFont">{{ form.display_name.errors }} </h6>
+</div>
+{% endif %}
+</div>
