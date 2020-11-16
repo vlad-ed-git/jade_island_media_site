@@ -2,7 +2,13 @@
 {% load i18n %}
 <div class="my-3 card shadow colorWhiteBg" style="border-radius: 0px !important;">
     <div class="card-body">
-        <h3 class="serifFont ls-2 colorBlack">{% trans "Editor's Dashboard" %}</h3>
+        <div class="clearfix">
+            <h3 class="serifFont ls-2 colorBlack float-left">
+                {% trans "Editor's Dashboard" %}
+            </h3>
+            <a href="{% url 'jade_island_post:create' %}" class="float-right lightFont btnOutlinePrimaryDarkBg">{% trans "New Post" %}</a>
+        </div>
+        
 
         <div class="list-group my-4">
             <a href="#" class="list-group-item list-group-item-action bodyFont">{% trans "Events" %}</a>

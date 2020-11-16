@@ -1,0 +1,29 @@
+{% load i18n %}
+<!-- JOB START DATE -->
+<div class="form-group post-fields jobs-field d-none">
+    <label for="id_job_start_date" class="bodyFont">{% trans 'Starting Date' %}
+        <small class="colorDarkerGrey">*optional</small>
+    </label>
+    <input type="text" class="form-control form-control-lg lightFont h-std" name="job_start_date" id="id_job_start_date"
+        {% if form.initial.job_start_date %} value="{{ form.initial.job_start_date }}"
+        {% endif %}>
+</div>
+
+<!-- EVENT START DATE -->
+<div class="form-group post-fields events-field d-none">
+    <label for="id_event_start_date" class="bodyFont">{% trans 'Starts At' %} 
+    </label>
+    <input type="text" class="form-control form-control-lg lightFont h-std" name="event_start_date" id="id_event_start_date"
+        {% if form.initial.event_start_date %} value="{{ form.initial.event_start_date }}"
+        {% endif %}>
+</div>
+
+<!-- EVENT END DATE -->
+<div class="form-group post-fields events-field d-none">
+    <label for="id_event_end_date" class="bodyFont">{% trans 'Ends At' %}
+        <small class="colorDarkerGrey">*optional</small>
+    </label>
+    <input type="text" class="form-control form-control-lg lightFont h-std" name="event_end_date" id="id_event_end_date"
+        {% if form.initial.event_end_date %} value="{{ form.initial.event_end_date }}"
+        {% endif %}>
+</div> 

@@ -1,0 +1,37 @@
+{% load i18n %}
+
+    <!--job category -->
+<div class="form-group post-fields jobs-field d-none my-3">
+    <label for="id_job_category" class="bodyFont colorBlack">{% trans "Job category" %}</label>
+    <select id="id_job_category" class="form-control bodyFont colorBlack" name="job_category" >
+
+      {% if form.initial.job_category_display %}
+      <option class="bodyFont colorBlack" value = "{{ form.initial.job_category }}" selected>{{ form.initial.job_category_display }} </option>
+      {% else %}
+      <option class="bodyFont colorBlack" value = "NT" selected>{% trans "Please Choose..." %}</option>
+      {% endif %}
+
+    <option class="bodyFont colorBlack" value='ET'>{% trans "Teaching English" %}</option>
+    <option class="bodyFont colorBlack" value='NET'>{% trans "Teaching Other Subjects" %}</option>
+    <option class="bodyFont colorBlack" value='NT'>{% trans "Non Teaching" %}</option>
+    </select>
+    </div>
+
+
+<!--job type-->
+<div class="form-group post-fields jobs-field d-none my-3">
+    <label for="id_job_type" class="bodyFont colorBlack">{% trans "Job Type" %}</label>
+    <select id="id_job_type" class="form-control bodyFont colorBlack" name="job_type" >
+
+      {% if form.initial.job_type_display %}
+      <option class="bodyFont colorBlack" value = "{{ form.initial.job_type }}" selected>{{ form.initial.job_type_display }} </option>
+      {% else %}
+      <option class="bodyFont colorBlack" value = "FT" selected>{% trans "Please Choose..." %}</option>
+      {% endif %}
+<option class="bodyFont colorBlack" value='FT'>{% trans "Full Time" %}</option>
+<option class="bodyFont colorBlack" value='PT'>{% trans "Part Time" %}</option>
+<option class="bodyFont colorBlack" value='FR'>{% trans "Contract or Freelance" %}</option>
+<option class="bodyFont colorBlack" value='INT'>{% trans "Paid Internship" %}</option>
+<option class="bodyFont colorBlack" value='VT'>{% trans "Volunteer or Unpaid Internship" %}</option>
+</select>
+</div>

@@ -1,0 +1,21 @@
+{% load i18n %}
+<div class="form-group my-3">
+    <label for="id_post_category" class="bodyFont colorBlack">{% trans "What category will this fall under?" %}</label>
+    <select id="id_post_category" class="form-control bodyFont colorBlack" name="post_category">
+
+      {% if form.initial.post_category_display %}
+      <option class="bodyFont colorBlack" value = "{{ form.initial.post_category }}" selected>{{ form.initial.post_category_display }} </option>
+      {% else %}
+      <option class="bodyFont colorBlack" value = "UN" selected>{% trans "Please Choose..." %}</option>
+      {% endif %}
+
+      <option class="bodyFont colorBlack" value  ="E">{% trans "Events" %}</option>
+      <option class="bodyFont colorBlack" value  ="P">{% trans "Places" %}</option>
+      <option class="bodyFont colorBlack" value  ="T">{% trans "Tips" %}</option>
+      <option class="bodyFont colorBlack" value  ="SM">{% trans "Shared Moment" %}</option>
+      <option class="bodyFont colorBlack" value  ="S">{% trans "Seeking New Home For My Pet / Item Sale" %}</option>
+      <option class="bodyFont colorBlack" value  ="J">{% trans "Jobs" %}</option>
+      <option class="bodyFont colorBlack" value  ="AD">{% trans "Advertisements" %}</option>
+    </select>
+    <small class="serifFont colorErrors d-none" id="uncategorized_post_hint">*{% trans 'Please choose a category.' %}</small>
+  </div>

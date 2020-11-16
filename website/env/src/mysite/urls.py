@@ -36,6 +36,7 @@ from account.views import(
 urlpatterns = [
     path('', home_page_view, name='home'),
     path('admin/', admin.site.urls),
+    path('jade_island_posts/', include('jade_island_post.urls'), name='jade_island_post'),
 
     #language 
     re_path(r'^i18n/', include('django.conf.urls.i18n')),

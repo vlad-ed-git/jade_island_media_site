@@ -229,3 +229,11 @@ a:hover{
 .blocks{
 	display: block;
 }
+
+/*from django */
+.errorlist{
+	text-transform:capitalize;
+}
+.errorlist li{
+ padding-top: 8px !important;
+}

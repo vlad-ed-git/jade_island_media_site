@@ -1,0 +1,15 @@
+{% load i18n %}
+<div class="mx-5">
+{% if form.non_field_errors %}
+<div class="my-2">
+    <h6 class="colorErrors h-std bodyFont">{{ form.non_field_errors }} </h6>
+</div>
+{% endif %}
+
+<!-- other field errors -->
+{% if form.errors %}
+<div class="my-2">
+    <h6 class="colorErrors h-std bodyFont">{{ form.errors }} </h6>
+</div>
+{% endif %}
+</div>

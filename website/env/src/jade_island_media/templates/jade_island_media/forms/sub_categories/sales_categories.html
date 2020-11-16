@@ -1,0 +1,25 @@
+{% load i18n %}
+
+    <!--sale category -->
+<div class="form-group post-fields sales-field d-none my-3">
+    <label for="id_sale_category" class="bodyFont colorBlack">{% trans "Item Category" %}</label>
+    <select id="id_sale_category" class="form-control bodyFont colorBlack" name="sale_category" >
+
+      {% if form.initial.sale_category_display %}
+      <option class="bodyFont colorBlack" value = "{{ form.initial.sale_category }}" selected>{{ form.initial.sale_category_display }} </option>
+      {% else %}
+      <option class="bodyFont colorBlack" value = "O" selected>{% trans "Please Choose..." %}</option>
+      {% endif %}
+
+<option class="bodyFont colorBlack" value='AC'>{% trans "Arts & Crafts" %}</option>
+<option class="bodyFont colorBlack" value='BC'>{% trans "Baby & Children" %}</option>
+<option class="bodyFont colorBlack" value='CA'>{% trans "Clothing & Apparel" %}</option>
+<option class="bodyFont colorBlack" value='EI'>{% trans "Electronics" %}</option>
+<option class="bodyFont colorBlack" value='HS'>{% trans "Health & Sports" %}</option>
+<option class="bodyFont colorBlack" value='HF'>{% trans "Home & Furniture" %}</option>
+<option class="bodyFont colorBlack" value='PA'>{% trans "Pets & Animals" %}</option>
+<option class="bodyFont colorBlack" value='SE'>{% trans "Services" %}</option>
+<option class="bodyFont colorBlack" value='V'>{% trans "Vehicles" %}</option>
+<option class="bodyFont colorBlack" value='O'>{% trans "Other" %}</option>
+</select>
+</div>

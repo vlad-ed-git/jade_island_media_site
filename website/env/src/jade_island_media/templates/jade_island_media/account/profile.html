@@ -33,7 +33,6 @@
                 <span class="colorPrimary">{% trans 'Your profile has been updated!' %}</span>
                 </p>
                 {% endif %}
-            </div>
 
             <!-- ERRORS SECTION -->
             {% include 'jade_island_media/account/auth_errors.html' with form=profile_form %}
@@ -63,12 +62,12 @@
 
               <div class="form-group">
                 <label for="id_name" class="bodyFont">{% trans "Your Name" %}</label>
-                <input type="text" class="form-control form-control-lg lightFont h-std" id="id_name" name="display_name" aria-describedby="emailHelp" value="{{ profile_form.initial.display_name }}" required="true">
+                <input type="text" class="form-control form-control-lg lightFont h-std" id="id_name" name="display_name"  value="{{ profile_form.initial.display_name }}" required="true">
               </div>
               
               <div class="form-group">
                 <label for="id_email" class="bodyFont">{% trans "Email address" %}</label>
-                <input type="email" class="form-control form-control-lg lightFont h-std" id="id_email" name="email" aria-describedby="emailHelp" value="{{ profile_form.initial.email }}" required="true">
+                <input type="email" class="form-control form-control-lg lightFont h-std" id="id_email" name="email"  value="{{ profile_form.initial.email }}" required="true">
               </div>
 
               <div class="blocks mb-3">
@@ -81,6 +80,8 @@
             </div>
             
           </div>
+          
+        </div>
     </div>
       </div>
     </div>

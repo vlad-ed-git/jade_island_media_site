@@ -1,0 +1,75 @@
+{% load i18n %}
+<div class="form-group post-fields all-posts-fields d-none my-3">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_featured_image" name="featured_image" required="true">
+        <label class="custom-file-label lightFont h-std" for="id_featured_image">{% trans "Featured Image" %} <sup class="colorPrimaryDark boldFont">*{% trans 'required' %}</sup></label>
+    </div>
+</div>
+<div class="form-group post-fields all-posts-fields d-none my-3" id="addExtraImgsDiv">
+    <h6 class="colorBlack boldFont h-sm">
+        {% trans 'You can insert up to 9 extra images by' %}
+        <span id="addImages" class="colorPrimary blackOnHover" >
+            <u>{% trans 'clicking here' %}</u> {% include 'jade_island_media/bootstrap_icons/plus.html' %}
+        </span> 
+    </h6> 
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv1">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_one" name="extra_image_one">
+        <label class="custom-file-label lightFont h-std" for="id_extra_image_one">{% trans "Extra Image 1" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv2">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_two" name="extra_image_two">
+        <label class="custom-file-label lightFont h-std" for="id_extra_image_two">{% trans "Extra Image 2" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv3">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_three" name="extra_image_three">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_three">{% trans "Extra Image 3" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv4">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_four" name="extra_image_four">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_four">{% trans "Extra Image 4" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv5">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_five" name="extra_image_five">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_five">{% trans "Extra Image 5" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv6">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_six" name="extra_image_six">
+        <label class="custom-file-label lightFont h-std" for="id_extra_image_six">{% trans "Extra Image 6" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv7">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_seven" name="extra_image_seven">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_seven">{% trans "Extra Image 7" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv8">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_eight" name="extra_image_eight">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_eight">{% trans "Extra Image 8" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>
+<div class="form-group extra-imgs-divs d-none my-3" id="extraImgDiv9">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="id_extra_image_nine" name="extra_image_nine">
+        <label class="custom-file-label lightFont h-std"
+            for="id_extra_image_nine">{% trans "Extra Image 9" %} <sup>{% trans 'optional' %}</sup></label>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+{% load i18n %}
+
+<!--place category -->
+<div class="form-group post-fields places-field d-none my-3">
+<label for="id_place_category" class="bodyFont colorBlack">{% trans "Type of place" %}</label>
+<select id="id_place_category" class="form-control bodyFont colorBlack" name="place_category" >
+
+  {% if form.initial.place_category_display %}
+  <option class="bodyFont colorBlack" value = "{{ form.initial.place_category }}" selected>{{ form.initial.place_category_display }} </option>
+  {% else %}
+  <option class="bodyFont colorBlack" value = "O" selected>{% trans "Please Choose..." %}</option>
+  {% endif %}
+
+<option class="bodyFont colorBlack" value='D'>{% trans "Dining" %}</option>
+<option class="bodyFont colorBlack" value='P'>{% trans "Playing" %}</option>
+<option class="bodyFont colorBlack" value='L'>{% trans "Learning" %}</option>
+<option class="bodyFont colorBlack" value='H'>{% trans "Health" %}</option>
+<option class="bodyFont colorBlack" value='LO'>{% trans "Locals" %}</option>
+<option class="bodyFont colorBlack" value='S'>{% trans "Staying" %}</option>
+<option class="bodyFont colorBlack" value='O'>{% trans "Other" %}</option>
+</select>
+</div>

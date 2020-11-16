@@ -21,6 +21,8 @@ SITE_CONFIG_DIR = os.path.join(BASE_DIR, "config")
 LOCALE_DIR = os.path.join(BASE_DIR, "locale")
 LOCALE_PATHS = ( LOCALE_DIR, )
 
+DATETIME_INPUT_FORMATS = ['%Y/%m/%d %H:%M',]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -45,6 +47,8 @@ if DEBUG:
 INSTALLED_APPS = [
     'account',
     'jade_island_media',
+    'jade_island_post',
+    'jade_analytics',
 
     'django.contrib.sites',
     'django_comments_xtd',
@@ -68,7 +72,7 @@ COMMENTS_APP = 'django_comments_xtd'
 COMMENTS_XTD_MAX_THREAD_LEVEL = 5
 COMMENTS_XTD_CONFIRM_EMAIL = False
 COMMENTS_HIDE_REMOVED = True
-#TODO? COMMENTS_XTD_MODEL = 'topic.models.CustomComment'
+COMMENTS_XTD_MODEL = 'jade_island_post.models.CustomComment'
 COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order') 
 
 AUTHENTICATION_BACKENDS = ( 

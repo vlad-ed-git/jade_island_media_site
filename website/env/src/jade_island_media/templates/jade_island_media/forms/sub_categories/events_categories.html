@@ -1,0 +1,22 @@
+{% load i18n %}
+<div class="form-group post-fields events-field d-none my-3">
+    <label for="id_event_category" class="bodyFont colorBlack">{% trans "Event Type" %}</label>
+    <select id="id_event_category" class="form-control bodyFont colorBlack" name="event_category" >
+
+      {% if form.initial.event_category_display %}
+      <option class="bodyFont colorBlack" value = "{{ form.initial.event_category }}" selected>{{ form.initial.event_category_display }} </option>
+      {% else %}
+      <option class="bodyFont colorBlack" value = "O" selected>{% trans "Please Choose..." %}</option>
+      {% endif %}
+
+<option class="bodyFont colorBlack" value='ED'>{% trans "Educational or Inspirational" %}</option>
+<option class="bodyFont colorBlack" value='EN'>{% trans "Entertainment" %}</option>
+<option class="bodyFont colorBlack" value='EX'>{% trans "Exhibition or Trade fair" %}</option>
+<option class="bodyFont colorBlack" value='CH'>{% trans "Charity or Fund Raising" %}</option>
+<option class="bodyFont colorBlack" value='AC'>{% trans "Awards and Competitions" %}</option>
+<option class="bodyFont colorBlack" value='CO'>{% trans "Conference or Meeting" %}</option>
+<option class="bodyFont colorBlack" value='NS'>{% trans "Networking Sessions" %}</option>
+<option class="bodyFont colorBlack" value='O'>{% trans "Other" %}</option>
+<option class="bodyFont colorBlack" value='W'>{% trans "WEBINARS" %}</option>
+</select>
+</div>

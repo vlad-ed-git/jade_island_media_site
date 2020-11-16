@@ -1,0 +1,158 @@
+{% extends 'main_secondary.html' %}
+      {% load i18n %}
+      {% load static %}
+
+          <!-- page specific meta info -->
+    {% block meta %}
+    <title>Jade Island Media | New Post </title>
+    <link rel="stylesheet" href="{% static 'styles/jquery.datetimepicker.min.css' %}">
+    {% endblock meta %}
+      {% block content %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 offset-md-2 col-md-8">
+            <div class="card shadow colorWhiteBg" style="border-radius: 0px !important;">
+               
+              
+              {% if successfully_created_post %}
+              <div class="card-body">
+                <h4 class="boldFont colorPrimaryDark">{% trans 'Your post has been published' %}</h4>
+                  <a href="{% url 'profile' %}" class="colorPrimary blackOnHover bodyFont">{% trans 'Back to my profile' %}</a>
+              </div>  
+
+              {% else %}
+              
+                
+              <!-- CREATE POST FORM -->
+              <div class="card-body">
+                  <div class="blocks clearfix">
+                    <h4 class="float-left boldFont colorBlack">{% trans 'Create A New Post' %}</h4>
+                    <a href="{% url 'profile' %}" class="float-right colorPrimaryDark blackOnHover bodyFont">{% trans 'Back to my profile' %}</a>
+                  </div>
+                
+                  <h6 class="lightFont h-sm">
+                    {% blocktrans %}
+                    Posts are approved by our editors before they are displayed to our visitors.
+                    {% endblocktrans %}
+                  </h6>
+          
+                   <!-- ERRORS SECTION -->
+                {% include 'jade_island_media/forms/post_form_errors.html' with form=create_form %}
+
+                  <form class="mx-5 my-3" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <!-- POST CATEGORY -->
+                    {% include 'jade_island_media/forms/jade_island_post_categories.html' with form=create_form %}
+
+                    <!-- SUB CATEGORIES -->
+                    {% include 'jade_island_media/forms/sub_categories/events_categories.html' with form=create_form %}
+
+                    {% include 'jade_island_media/forms/sub_categories/places_categories.html' with form=create_form %}
+
+                    {% include 'jade_island_media/forms/sub_categories/job_categories.html' with form=create_form %}
+
+                    {% include 'jade_island_media/forms/sub_categories/sales_categories.html' with form=create_form %}
+                    
+                    <!--title -->
+                    <div class="form-group post-fields all-posts-fields d-none">
+                      <label for="id_title" class="bodyFont">{% trans "Title" %}</label>
+                      <input type="text" class="form-control form-control-lg lightFont h-std" id="id_title" name="title" {% if create_form.initial.title %} value="{{ create_form.initial.title }}" {% endif %} required="True">
+                    </div>
+
+                    <!--body -->
+                    <div class="form-group post-fields all-posts-fields exc-shared-moment-field d-none">
+                      <label for="id_body" class="bodyFont">{% trans "Description" %}</label>
+                      <textarea rows="15" type="text" class="form-control form-control-lg lightFont h-std" id="id_body" name="body">{% if create_form.initial.body %}{{ create_form.initial.body }} {% endif %}</textarea>
+                      <small class="colorPrimaryDark serifFont">*{% trans "formatting tips" %}
+                        &lt;u&gt;<u>{% trans "underlined text" %}</u>&lt;/u&gt; &lt;b&gt;<b>{% trans "bold text" %}</b>&lt;/b&gt;
+                        &lt;i&gt;<i>{% trans "italic text" %}</i>&lt;/i&gt;
+                    </small>
+                    </div>
+
+                    {% include 'jade_island_media/forms/date_inputs/post_date_inputs.html' with form=create_form %}
+      
+
+                    <!-- PRICE -->
+                    <div class="form-group post-fields sales-field d-none">
+                      <label for="id_sale_item_price_rmb" class="bodyFont">{% trans "Price in Chinese RMB" %}</label>
+                      <input type="text" class="form-control form-control-lg lightFont h-std" id="id_sale_item_price_rmb" name="sale_item_price_rmb" {% if create_form.initial.sale_item_price_rmb %} value="{{ create_form.initial.title }}" {% endif %}>
+                      <small class="colorPrimaryDark serifFont">*{% trans "Leave this blank if you are seeking a new home for your pet." %}</small>
+                    </div> 
+
+                    <!--location-->
+                    <div class="form-group post-fields all-posts-fields d-none">
+                      <label for="id_location" class="bodyFont">{% trans "Location" %} <small class="boldFont colorDarkerGrey">*{% trans 'optional' %}</small></label>
+                      <textarea rows="3" type="text" class="form-control form-control-lg lightFont h-std" id="id_location" name="location" >{% if create_form.initial.location %}{{ create_form.initial.location }}{% endif %}</textarea>
+                    </div>
+
+                    <!--contact info -->
+                    <div class="form-group post-fields all-posts-fields exc-shared-moment-field d-none">
+                      <label for="id_contact" class="bodyFont">{% trans "Contact" %} <small class="boldFont colorDarkerGrey">*{% trans 'optional' %}</small></label>
+                      <textarea rows="3"  type="text" class="form-control form-control-lg lightFont h-std" id="id_contact" name="contact">{% if create_form.initial.contact %}{{ create_form.initial.contact }}{% endif %}</textarea>
+                    </div>
+
+                    <!--adverts | url field -->
+                    <div class="form-group post-fields adverts-field d-none">
+                      <label for="id_url_field" class="bodyFont">{% trans "Company Website Link" %} <small class="boldFont colorDarkerGrey">*{% trans 'optional' %}</small></label>
+                      <input type="text" class="form-control form-control-lg lightFont h-std" id="id_url_field" name="url_field" {% if create_form.initial.url_field %} value="{{ create_form.initial.url_field }}" {% endif %}>
+                    </div>
+
+                    <!--hash tags -->
+                    <div class="form-group post-fields all-posts-fields exc-adverts-field d-none">
+                      <label for="id_tags" class="bodyFont">{% trans "#Tags" %}</label>
+                      <input type="text" class="form-control form-control-lg lightFont h-std" id="id_tags" name="tags" {% if create_form.initial.tags %} value="{{ create_form.initial.tags }}" {% endif %}>
+                    </div>
+
+                    <!-- IMAGES -->
+                    {% include 'jade_island_media/forms/image_inputs.html' %}
+
+                    <!-- check boxes -->
+                    
+                    {% if request.user.is_editor %}
+                      
+                    <div class="form-group post-fields events-field d-none">
+                      <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" name="is_featured" type="checkbox"
+                              {% if create_form.initial.is_featured%} value="{{ create_form.initial.is_featured }}"
+                              {% endif %} id="id_is_featured">
+                          <label class="custom-control-label lightFont h-std" for="id_is_featured">
+                              <small>{% trans 'Mark As Featured Post?' %}</small>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="form-group post-fields all-posts-fields d-none">
+                      <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" name="is_approved" type="checkbox"
+                              {% if create_form.initial.is_approved%} value="{{ create_form.initial.is_approved }}"
+                              {% endif %} id="id_is_approved">
+                          <label class="custom-control-label lightFont h-std" for="id_is_approved">
+                              <small>{% trans 'Mark As Approved?' %}</small>
+                          </label>
+                      </div>
+                  </div> 
+                  
+                      
+                  {% endif %}
+                  <!--submit -->
+                  <div class="blocks my-3 d-none" id="submitBtnDiv">
+                    <button type="submit" class="w-100 lightFont btnOutlinePrimaryDarkBg">{% trans "Submit Post" %}</button>
+                  </div>
+
+                  </form>
+                </div>
+              
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    
+    {% block js %}
+      <script src=" {% static 'jade_island_media/scripts/post_create.js' %}" type="text/javascript"></script>
+      <script src="{% static 'scripts/jquery.datetimepicker.full.min.js'  %}" type="text/javascript"></script>
+      <script src="{% static 'scripts/date_time_pickers_init.js'  %}" type="text/javascript"></script>
+      {% endblock js %}
